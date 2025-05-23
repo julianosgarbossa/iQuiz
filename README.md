@@ -9,8 +9,6 @@ O **iQuiz** é um aplicativo educacional simples, desenvolvido com **UIKit (Stor
   <img src="Assets/Tela_Desempenho.png" width="150"/>
 </p>
 
----
-
 ## 🛠 Tecnologias Utilizadas
 
 - Swift  
@@ -18,8 +16,6 @@ O **iQuiz** é um aplicativo educacional simples, desenvolvido com **UIKit (Stor
 - Storyboard  
 - Auto Layout  
 - MVC (Model-View-Controller)  
-
----
 
 ## 👨🏻‍💻 Como Usar o Aplicativo
 
@@ -29,8 +25,6 @@ O **iQuiz** é um aplicativo educacional simples, desenvolvido com **UIKit (Stor
 - Toque na resposta que você achar correta para cada pergunta e aguarde a próxima.
 - Após responder as 10 perguntas, será exibida a tela de desempenho.
 - Para refazer o quiz, toque no botão **"Reiniciar Quiz"**.
-
----
 
 ## 📌 Observação
 

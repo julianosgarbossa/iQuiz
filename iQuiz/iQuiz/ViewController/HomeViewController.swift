@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  iQuiz
 //
 //  Created by Juliano Sgarbossa on 21/05/25.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
     
     @IBOutlet weak var botaoIniciarQuiz: UIButton!
     
@@ -17,10 +17,11 @@ class ViewController: UIViewController {
     }
 
     @IBAction func botaoPressionado(_ sender: UIButton) {
-        print("O botão foi pressionado!")
+        
     }
     
     func configuraLayout() {
+        navigationItem.hidesBackButton = true
         botaoIniciarQuiz.layer.cornerRadius = 12
     }
 }

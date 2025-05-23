@@ -28,14 +28,16 @@ class QuestaoViewController: UIViewController {
         
         if usuarioAcertouResposta {
             pontuacao += 1
-            sender.backgroundColor = UIColor(red: 11/255, green: 161/255, blue: 53/255, alpha: 1)
+            sender.backgroundColor = UIColor.corDeFundoVerde
         } else {
-            sender.backgroundColor = UIColor(red: 211/255, green: 17/255, blue: 17/255, alpha: 1)
+            sender.backgroundColor = UIColor.corDeFundoVermelha
         }
         
         if numeroQuestao < BancoDeQuestoes.questoes.count - 1 {
             numeroQuestao += 1
             Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(configurarQuestao), userInfo: nil, repeats: false)
+        } else {
+            Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(navegaParaTelaDesempenho), userInfo: nil, repeats: false)
         }
     }
     
@@ -53,7 +55,17 @@ class QuestaoViewController: UIViewController {
         for botao in botoesRespostas {
             let tituloBotao = BancoDeQuestoes.questoes[numeroQuestao].respostas[botao.tag]
             botao.setTitle(tituloBotao, for: .normal)
-            botao.backgroundColor = UIColor(red: 116/255, green: 50/255, blue: 255/255, alpha: 1)
+            botao.backgroundColor = UIColor.corDeFundoPadrao
         }
+    }
+    
+    @objc
+    func navegaParaTelaDesempenho() {
+        performSegue(withIdentifier: "IrParaTelaDesempenho", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let desempenhoVC = segue.destination as? DesempenhoViewController else { return }
+        desempenhoVC.pontuacao = pontuacao
     }
 }
